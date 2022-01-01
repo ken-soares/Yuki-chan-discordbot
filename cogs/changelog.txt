@@ -1,0 +1,4 @@
+- added cogs
+- added a ping command
+- added a docs command
+- no much more to be honest
