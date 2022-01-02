@@ -1,4 +1,4 @@
-- added cogs
-- added a ping command
-- added a docs command
+- added a minigames category
+- added a destiny command
+-changed the prefix to y!
 - no much more to be honest
