@@ -6,7 +6,7 @@ from discord.ext import commands
 default_intents = discord.Intents.default()
 default_intents.members = True
 token = input("Please enter bot token: ")
-client = commands.Bot( command_prefix = "yc!",intents=default_intents)
+client = commands.Bot( command_prefix = "y!",intents=default_intents)
 
 @client.event
 async def on_ready():
