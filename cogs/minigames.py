@@ -9,7 +9,7 @@ class MiniGames(commands.Cog):
     @commands.command(aliases=['8ball', 'mb'])
     async def destiny(self,ctx, *args):
 
-        with open("cogs/responses.txt", "r") as f:
+        with open("cogs/ressources/responses.txt", "r") as f:
             possible_answers = f.read().split("\n")
             f.close() 
 
