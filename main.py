@@ -3,9 +3,10 @@ import os
 from discord.ext import commands
 
 
+token = input("Please enter bot token: ")
+
 default_intents = discord.Intents.default()
 default_intents.members = True
-token = input("Please enter bot token: ")
 client = commands.Bot( command_prefix = "y!",intents=default_intents)
 
 @client.event

@@ -50,8 +50,8 @@ class Relationships(commands.Cog):
                     )
 
             file = pandas.read_csv("cogs/ressources/relationships.csv")
-            maxkiss = len(file['hug']) - 1
-            embed.set_image(url=f"{file['hugged'][random.randint(0, maxhug)]}")
+            maxhug = len(file['hug']) - 1
+            embed.set_image(url=f"{file['hug'][random.randint(0, maxhug)]}")
             await ctx.send(embed=embed)
 
 def setup(client):
