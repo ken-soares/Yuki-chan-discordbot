@@ -1,4 +1,4 @@
-- added a minigames category
-- added a destiny command
-- changed the prefix to y!
-- no much more to be honest
+- added a relationship category
+- added hug and kiss commands
+- re-built a secret script ;)
+- what, you expected more than 3 changes?
