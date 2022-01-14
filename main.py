@@ -1,9 +1,15 @@
 import discord
 import os
+from dotenv import load_dotenv
 from discord.ext import commands
 
+load_dotenv()
 
-token = input("Please enter bot token: ")
+read_mode = input("1. Enter bot token\n2.Read token from .env file(1/2):")
+if int(read_mode) == 1:
+    token = input("Please enter bot token: ")
+else:
+    token = str(os.getenv("TOKEN"))
 
 default_intents = discord.Intents.default()
 default_intents.members = True
