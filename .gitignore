@@ -1,0 +1,5 @@
+#ignoring ressources such as user data etc
+./cogs/ressources
+
+#ignoring potential .env files in the directory
+*.env
