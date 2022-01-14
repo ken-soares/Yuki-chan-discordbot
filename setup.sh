@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dep=('discord' 'pandas')
+dep=('python-dotenv' 'discord' 'pandas')
 
 echo -n "Do you want to install required dependencies for Yuki-chan? (y/n):"
 read response
