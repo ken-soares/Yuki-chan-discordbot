@@ -4,11 +4,11 @@ Yuki-chan is a bot which provides mini-games for the users to play. It is curren
 
 ## Minigames
 
-`y!coinflip` - flip a coin\ 
-`y!rockpaperscissors` - play rock paper scissors with Yuki-chan\ 
-`y!guess` - number guessing game\  
-`y!destiny` - answers to your question
+* `y!coinflip` - flip a coin
+* `y!rockpaperscissors` - play rock paper scissors with Yuki-chan
+* `y!guess` - number guessing game 
+* `y!destiny` - answers to your question
 
 ## Images
-`y!dog` - random image of dog\ 
-`y!cat` - random image of cat
+* `y!dog` - random image of dog
+* `y!cat` - random image of cat
