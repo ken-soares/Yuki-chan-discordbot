@@ -8,6 +8,7 @@ Yuki-chan is a bot which provides mini-games for the users to play. It is curren
 * `y!rockpaperscissors` - play rock paper scissors with Yuki-chan
 * `y!guess` - number guessing game 
 * `y!destiny` - answers to your question
+* `y!amogus` - find the imposter with little to no help c:
 
 ## Images
 * `y!dog` - random image of dog
