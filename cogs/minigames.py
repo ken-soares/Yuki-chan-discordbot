@@ -5,7 +5,34 @@ from discord.ext import commands
 class MiniGames(commands.Cog):
     def __init__(self, client):
         self.client = client
-    
+
+
+    @commands.command(aliases=['sus','amogus'])
+    async def imposter(self,ctx):
+
+        with open("cogs/ressources/amongus.txt", "r") as f:
+            hints = f.read().split("\n")
+            f.close()
+
+        imposter = random.randint(1,3)
+        dictImposter = {'cyan': 1, 'red': 2, 'yellow': 3} 
+
+        embed1 = discord.Embed(
+                title = "Vote for the imposter!",
+                color = discord.Color.teal(),
+                description = f"hint: {hints[random.randint(0,len(hints)-1)]}\n(cyan,yellow,red)"
+                )
+
+        embed1.set_image(url="https://i.imgur.com/jgnGPFm.png")
+        await ctx.send(embed=embed1)
+        response = await self.client.wait_for('message') 
+        if response.content.lower() not in dictImposter.keys():
+            await ctx.send("Answer to the question you **idiot** :knife:")
+        elif dictImposter[response.content.lower()] == imposter: 
+            await ctx.send(f"{response.content.lower()} was the imposter, you won!")
+        else:
+            await ctx.send(f"{response.content.lower()} was not the imposter, you lose...")
+
     @commands.command(aliases=['rps'])
     async def rockpaperscissors(self, ctx, move: str):
         comp = random.randint(0,3)
