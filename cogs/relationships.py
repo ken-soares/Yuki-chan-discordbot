@@ -30,6 +30,28 @@ class Relationships(commands.Cog):
             embed.set_image(url=f"{file['kiss'][random.randint(0, maxkiss)]}")
             await ctx.send(embed=embed)
 
+    @commands.command()
+    async def pat(self, ctx,*, user):
+        if type(user) == discord.User:
+            embed = discord.Embed(
+                    description = f"{ctx.message.author} gave a headpat to {user.mention}",
+                    colour = discord.Colour.purple()
+                    )
+
+            file = pandas.read_csv("cogs/ressources/relationships.csv")
+            maxpat = len(file['pat']) - 1
+            embed.set_image(url=f"{file['pat'][random.randint(0, maxpat)]}")
+            await ctx.send(embed=embed)
+        else:
+            embed = discord.Embed(
+                    description = f"{ctx.message.author} gave a headpat to {user}",
+                    colour = discord.Colour.purple()
+                    )
+
+            file = pandas.read_csv("cogs/ressources/relationships.csv")
+            maxpat = len(file['pat']) - 1
+            embed.set_image(url=f"{file['pat'][random.randint(0, maxpat)]}")
+            await ctx.send(embed=embed)
     
     @commands.command()
     async def hug(self, ctx,*, user):
