@@ -31,6 +31,18 @@ class Relationships(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command()
+    async def cry(self, ctx):
+        embed = discord.Embed(
+                description = f"{ctx.message.author} cries",
+                colour = discord.Colour.purple()
+                )
+
+        file = pandas.read_csv("cogs/ressources/relationships.csv")
+        maxcry = len(file['cry']) - 1
+        embed.set_image(url=f"{file['cry'][random.randint(0, maxcry)]}")
+        await ctx.send(embed=embed)
+
+    @commands.command()
     async def pat(self, ctx,*, user):
         if type(user) == discord.User:
             embed = discord.Embed(
