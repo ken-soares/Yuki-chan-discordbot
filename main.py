@@ -13,7 +13,23 @@ else:
 
 default_intents = discord.Intents.default()
 default_intents.members = True
-client = commands.Bot( command_prefix = "y!",intents=default_intents)
+client = commands.Bot( command_prefix = "y!",intents=default_intents, help_command=None)
+
+@client.command()
+async def help(ctx):
+    embed = discord.Embed(
+            title="Help",
+            description="Yuki-chan's commands",
+            color=discord.Color.blue()
+            )
+    embed.set_thumbnail(url='https://images-ext-1.discordapp.net/external/338Ir-6ZyikfVjTqJbDdhe2bbssmTercviUrow8DVOM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/926836893121912852/69a147f933d4223dbf14945199be2ae6.webp?width=690&height=690')
+    embed.set_footer(text=f"Requested by {ctx.author}", icon_url=ctx.author.avatar_url)
+    embed.add_field(name='Relationships',value="`kiss`, `hug`, `pat`, `slap`, `cry`")
+    embed.add_field(name='Fun',value="`meme`, `emojify`, `randomify`, `hack`, `dog`, `cat`",inline=False)
+    embed.add_field(name='Minigames',value="`guess`, `destiny`, `imposter`, `rockpaperscissors`",inline=False)
+    embed.add_field(name='Moderation',value="`ban`, `unban`, `kick`, `clear`",inline=False)
+    embed.add_field(name='Misc',value="`coinflip`, `getpfp`, `docs`, `changelog`",inline=False)
+    await ctx.send(embed=embed)
 
 @client.event
 async def on_ready():
