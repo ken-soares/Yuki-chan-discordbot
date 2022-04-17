@@ -7,9 +7,7 @@ Yuki-Chan discord bot
 
 > As there are more and more commands on Yuki-chan, It can be difficult to know how to use one of them, *however* don't worry, we're here to save you. First, the list of commands can be found with `y!help`, and you guessed it, the bot prefix *which cannot be changed because the main dev is super lazy*, is `y!`. Now here is a per-category description of every command:
 
----
-
-<h1>Commands list:</h1>
+<h1>Commands list:</h1><br>
 
 ## <u>Relationship:</u>
 
@@ -54,7 +52,7 @@ y!slap <user>
 ```
 y!cry
 ```
-→ You're sad, cry. 🙂 
+→ You're sad, cry. 🙂
 
 ---
 
