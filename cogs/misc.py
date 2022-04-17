@@ -88,7 +88,7 @@ class Misc(commands.Cog):
  
     @commands.command()
     async def docs(self, ctx):
-        await ctx.send("Here is our documentation page:\nLIEN DE LA DOCUMENTATION")
+        await ctx.send("Here is our documentation page:\nhttps://github.com/ken-soares/Yuki-chan-discordbot/blob/main/Documentation.md#Commands-List")
    
     @commands.command(aliases=['pp', 'pfp', 'pdp'])
     async def getpfp(self,ctx, member: discord.User=None):
