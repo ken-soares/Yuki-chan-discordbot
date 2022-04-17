@@ -1,4 +1,4 @@
-- added a relationship category
-- added hug and kiss commands
-- re-built a secret script ;)
-- what, you expected more than 3 changes?
+- added a snipe command
+- bug fixes on rockpaperscissors, imposter and guess
+- added an actual documentation
+- added slap command
