@@ -25,13 +25,19 @@ class MiniGames(commands.Cog):
 
         embed1.set_image(url="https://i.imgur.com/jgnGPFm.png")
         await ctx.send(embed=embed1)
-        response = await self.client.wait_for('message') 
-        if response.content.lower() not in dictImposter.keys():
-            await ctx.send("Answer to the question you **idiot** :knife:")
-        elif dictImposter[response.content.lower()] == imposter: 
-            await ctx.send(f"{response.content.lower()} was the imposter, you won!")
-        else:
-            await ctx.send(f"{response.content.lower()} was not the imposter, you lose...")
+        responded = False
+        while not responded:
+            response = await self.client.wait_for('message') 
+            if response.author == ctx.author:
+                responded = True
+                if response.content.lower() not in dictImposter.keys():
+                    await ctx.send("Answer to the question you **idiot** :knife:")
+                elif dictImposter[response.content.lower()] == imposter: 
+                    await ctx.send(f"{response.content.lower()} was the imposter, you won!")
+                else:
+                    await ctx.send(f"{response.content.lower()} was not the imposter, you lose...")
+            else:
+                pass
 
     @commands.command(aliases=['rps'])
     async def rockpaperscissors(self, ctx, move: str):
@@ -70,15 +76,21 @@ class MiniGames(commands.Cog):
         number = random.randint(0, 20)
         await ctx.send('Guess the number (0-20), you have 5 guesses')
         for i in range(0, 5):
-            response = await self.client.wait_for('message')
-            guess = int(response.content)
-            if guess > number:
-                await ctx.send(f'the number is smaller, number of guesses:{i+1}')
-            elif guess < number:
-                await ctx.send(f'the number is bigger, number of guesses:{i+1}')
-            else:
-                await ctx.send(f'you found the number! :partying_face:')
-                break
+            responded = False
+            while not responded:
+                response = await self.client.wait_for('message')
+                if response.author == ctx.author:
+                    responded = True
+                    guess = int(response.content)
+                    if guess > number:
+                        await ctx.send(f'the number is smaller, number of guesses:{i+1}')
+                    elif guess < number:
+                        await ctx.send(f'the number is bigger, number of guesses:{i+1}')
+                    else:
+                        await ctx.send(f'you found the number! :partying_face:')
+                        break
+                else:
+                    responded = False
         await ctx.send(f"the number was {number}")
 
     @commands.command(aliases=['8ball', 'mb'])
