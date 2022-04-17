@@ -90,7 +90,7 @@ class Misc(commands.Cog):
     async def docs(self, ctx):
         await ctx.send("Here is our documentation page:\nLIEN DE LA DOCUMENTATION")
    
-    @commands.command()
+    @commands.command(aliases=['pp', 'pfp', 'pdp'])
     async def getpfp(self,ctx, member: discord.User=None):
      if not member:
       member = ctx.author
@@ -107,7 +107,10 @@ class Misc(commands.Cog):
         with open("changelog.txt", "r") as f:
             changes = f.read()
             f.close()
-        await ctx.send(f'```LATEST CHANGES:\n{changes}```')
+        Embed = discord.Embed(title="latest changes",
+                description=changes,
+                colour=discord.Colour.random())
+        await ctx.send(embed=Embed)
    
 
 def setup(client):
