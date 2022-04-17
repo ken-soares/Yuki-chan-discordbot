@@ -1,6 +1,7 @@
 import discord
 import pandas
 import random
+import aiohttp
 from discord.ext import commands
 
 class Relationships(commands.Cog):
@@ -28,6 +29,29 @@ class Relationships(commands.Cog):
             file = pandas.read_csv("cogs/ressources/relationships.csv")
             maxkiss = len(file['kiss']) - 1
             embed.set_image(url=f"{file['kiss'][random.randint(0, maxkiss)]}")
+            await ctx.send(embed=embed)
+
+    @commands.command()
+    async def slap(self, ctx,*, user):
+        if type(user) == discord.User:
+            embed = discord.Embed(
+                    description = f"{ctx.message.author} slapped {user.mention}",
+                    colour = discord.Colour.purple()
+                    )
+
+            file = pandas.read_csv("cogs/ressources/relationships.csv")
+            maxslap = len(file['slap']) - 1
+            embed.set_image(url=f"{file['slap'][random.randint(0, maxslap)]}")
+            await ctx.send(embed=embed)
+        else:
+            embed = discord.Embed(
+                    description = f"{ctx.message.author} slapped {user}",
+                    colour = discord.Colour.purple()
+                    )
+
+            file = pandas.read_csv("cogs/ressources/relationships.csv")
+            maxslap = len(file['slap']) - 1
+            embed.set_image(url=f"{file['slap'][random.randint(0, maxslap)]}")
             await ctx.send(embed=embed)
 
     @commands.command()
@@ -87,6 +111,8 @@ class Relationships(commands.Cog):
             maxhug = len(file['hug']) - 1
             embed.set_image(url=f"{file['hug'][random.randint(0, maxhug)]}")
             await ctx.send(embed=embed)
+
+
 
 def setup(client):
     client.add_cog(Relationships(client))
