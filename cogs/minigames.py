@@ -40,30 +40,36 @@ class MiniGames(commands.Cog):
                 pass
 
     @commands.command(aliases=['rps'])
-    async def rockpaperscissors(self, ctx, move: str):
-        comp = random.randint(0,3)
-        move = move.lower()
-        if move == 'r' or move == 'rock':
-            if comp == 0:
-                await ctx.send(":rock: I played rock too, it's a tie.")
-            elif comp == 1:
-                await ctx.send(":roll_of_paper: I played paper, I win!")
+    async def rockpaperscissors(self, ctx):
+        await ctx.send("rock, paper or scissors (r, p, s)?")
+        responded = False
+        if not responded:
+            move = await self.client.wait_for('message')
+            comp = random.randint(0,3)
+            move = move.content.lower()
+            if move == 'r' or move == 'rock':
+                if comp == 0:
+                    await ctx.send(":rock: I played rock too, it's a tie.")
+                elif comp == 1:
+                    await ctx.send(":roll_of_paper: I played paper, I win!")
+                else:
+                    await ctx.send(":scissors: I played scissors, you win...")
+            elif move == 'p' or move == 'paper':
+                if comp == 0:
+                    await ctx.send(":rock: I played rock, you win...")
+                elif comp == 1:
+                    await ctx.send(":roll_of_paper: I played paper too, it's a tie.")
+                else:
+                    await ctx.send(":scissors: I played scissors, I win!")
             else:
-                await ctx.send(":scissors: I played scissors, you win...")
-        elif move == 'p' or move == 'paper':
-            if comp == 0:
-                await ctx.send(":rock: I played rock, you win...")
-            elif comp == 1:
-                await ctx.send(":roll_of_paper: I played paper too, it's a tie.")
-            else:
-                await ctx.send(":scissors: I played scissors, I win!")
+                if comp == 0:
+                    await ctx.send(":rock: I played rock, I win!")
+                elif comp == 1:
+                    await ctx.send(":roll_of_paper: I played paper, you win...")
+                else:
+                    await ctx.send(":scissors: I played scissors too, it's a tie")
         else:
-            if comp == 0:
-                await ctx.send(":rock: I played rock, I win!")
-            elif comp == 1:
-                await ctx.send(":roll_of_paper: I played paper, you win...")
-            else:
-                await ctx.send(":scissors: I played scissors too, it's a tie")
+            responded = False
 
     @commands.command(aliases=["cf"])
     async def coinflip(self, ctx):
