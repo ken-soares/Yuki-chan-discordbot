@@ -10,3 +10,5 @@ If you ever encounter an issue or want a certain feature (if I am able to implem
 also, you can invite the bot on your server using [this link](https://canary.discord.com/api/oauth2/authorize?client_id=926836893121912852&permissions=8&scope=bot)
 
 And here is [my website](https://ken-soares.github.io) if needed 😊
+
+thanks to [Tina](https://github.com/tina-otoge) for letting me using his server to run the bot
