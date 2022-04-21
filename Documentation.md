@@ -1,4 +1,4 @@
-Yuki-Chan discord bot 
+Yuki-Chan discord bot commands
 ====================
 
 ![](https://images-ext-1.discordapp.net/external/338Ir-6ZyikfVjTqJbDdhe2bbssmTercviUrow8DVOM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/926836893121912852/69a147f933d4223dbf14945199be2ae6.webp?width=200&height=200)
